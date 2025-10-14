@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xlay/DyxmanTM</title>
-    <link rel="stylesheet" href="style/style.css">
-    <script>
-        function copyDiscordAccount() {
-            var discordAccount = "xlay2000";
-            navigator.clipboard.writeText(discordAccount)
-                .then(function() {
-                    var tooltip = document.getElementById("copyTooltip");
-                    tooltip.style.opacity = "1";
-                    setTimeout(function() {
-                        tooltip.style.opacity = "0";
-                    }, 2000);
-                })
-                .catch(function(error) {
-                    console.error("Не удалось скопировать Discord аккаунт: ", error);
-                });
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xlay/DyxmanTM</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script>
+    function copyDiscordAccount() {
+      var discordAccount = "xlay2024";
+      navigator.clipboard.writeText(discordAccount)
+        .then(function () {
+          var tooltip = document.getElementById("copyTooltip");
+          tooltip.style.opacity = "1";
+          setTimeout(function () {
+            tooltip.style.opacity = "0";
+          }, 2000);
+        })
+        .catch(function (error) {
+          console.error("Не удалось скопировать Discord аккаунт: ", error);
+        });
+    }
+  </script>
 </head>
+
 <body>
   <div class="container">
-    <img src="https://sun1-22.userapi.com/s/v1/if2/6hcn2yprh8DXK1SIz3qOUudgvd9VWRFyEah6UWypZMPboRLKngNpCS26f5h3u_WCt3d4snuBnd_5VKjVEQcDel_k.jpg?quality=95&crop=0,0,610,610&as=50x50,100x100,200x200,400x400&ava=1&u=VvYzNPgWMaC5Q_kH2wpkcCWzrWhPpL880RkBVAAoSL4&cs=400x400" alt="Аватарка" class="avatar">
+    <img
+      src="https://sun1-22.userapi.com/s/v1/if2/6hcn2yprh8DXK1SIz3qOUudgvd9VWRFyEah6UWypZMPboRLKngNpCS26f5h3u_WCt3d4snuBnd_5VKjVEQcDel_k.jpg?quality=95&crop=0,0,610,610&as=50x50,100x100,200x200,400x400&ava=1&u=VvYzNPgWMaC5Q_kH2wpkcCWzrWhPpL880RkBVAAoSL4&cs=400x400"
+      alt="Аватарка" class="avatar">
     <div class="name">Xlay/DyxmanTM</div>
     <div class="buttons">
       <a href="https://vk.com/dyxmantm5" class="button">Вконтакте</a>
       <a href="https://www.youtube.com/c/DyxmanTM" class="button">YouTube</a>
-      <a href="https://t.me/minecapt" class="button">Telegram</a>
-      <a href="https://discord.gg/GG8AEN52Te" class="button">Discord Сервер 1</a>
-      <a href="https://discord.gg/BMeF5WprZG" class="button">Discord Сервер 2</a>
-      <a href="#" class="button" onclick="copyDiscordAccount()">Discord Аккаунт<span id="copyTooltip" class="tooltip">Скопировано</span></a>
-      <a href="https://www.youtube.com/watch?v=gr_sUvS6JKs&ab_channel=YouTubeViewers" class="button">Плюшка</a>
+      <a href="https://t.me/arsenxlay" class="button">Telegram</a>
+      <a href="https://discord.gg/GG8AEN52Te" class="button">Discord Сервер</a>
+      <a href="#" class="button" onclick="copyDiscordAccount()">Discord Аккаунт<span id="copyTooltip"
+          class="tooltip">Скопировано</span></a>
     </div>
   </div>
 </body>
+
 </html>
