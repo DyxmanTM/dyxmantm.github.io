@@ -300,6 +300,9 @@
 <body>
 
   <script>
+    // =============================
+    // PROFILE DATA (DEFAULT)
+    // =============================
     let profile = {
       title: document.title,
       nickname: 'YOUR NAME',
@@ -345,8 +348,9 @@
 
     render();
 
-    let adminEnabled = false;
-
+    // =============================
+    // ADMIN PANEL
+    // =============================
     function openAdmin() {
       const pass = prompt('Enter admin password:');
       if (pass !== '1234') {
@@ -354,9 +358,10 @@
         return;
       }
 
-      adminEnabled = true;
+      let panel = document.getElementById('adminPanel');
+      if (panel) panel.remove();
 
-      const panel = document.createElement('div');
+      panel = document.createElement('div');
       panel.id = 'adminPanel';
       panel.style.position = 'fixed';
       panel.style.top = '20px';
@@ -393,12 +398,27 @@
       };
     }
 
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === 'A') {
-        openAdmin();
-      }
-    });
+    // =============================
+    // ADMIN BUTTON
+    // =============================
+    const adminBtn = document.createElement('button');
+    adminBtn.innerText = 'ADMIN';
+    adminBtn.style.position = 'fixed';
+    adminBtn.style.bottom = '20px';
+    adminBtn.style.right = '20px';
+    adminBtn.style.zIndex = '99999';
+    adminBtn.style.padding = '10px 14px';
+    adminBtn.style.borderRadius = '10px';
+    adminBtn.style.border = '1px solid rgba(255,255,255,0.3)';
+    adminBtn.style.background = 'rgba(0,0,0,0.6)';
+    adminBtn.style.color = 'white';
+    adminBtn.style.cursor = 'pointer';
+    adminBtn.style.backdropFilter = 'blur(10px)';
+    adminBtn.onclick = openAdmin;
+    document.body.appendChild(adminBtn);
 
+    // =============================
+    // particles
     for (let i = 0; i < 40; i++) {
       const particle = document.createElement('div');
       particle.classList.add('particle');
@@ -416,7 +436,6 @@
       document.body.appendChild(particle);
     }
 
-    // click effect
     document.addEventListener('click', (e) => {
       const circle = document.createElement('div');
 
@@ -434,9 +453,7 @@
 
       document.body.appendChild(circle);
 
-      setTimeout(() => {
-        circle.remove();
-      }, 600);
+      setTimeout(() => circle.remove(), 600);
     });
 
     const style = document.createElement('style');
@@ -496,6 +513,9 @@
   </div>
 
   <script>
+    // =============================
+    // ЗАГРУЗКА ДАННЫХ ИЗ CONFIG
+    // =============================
 
     document.title = CONFIG.siteTitle;
 
@@ -515,7 +535,8 @@
 
       linksContainer.appendChild(a);
     });
-    
+
+    // particles
     for (let i = 0; i < 40; i++) {
       const particle = document.createElement('div');
       particle.classList.add('particle');
